@@ -679,7 +679,7 @@
   </div>
 </section>
 
-<section class="py-16 bg-gray-50">
+<section class="py-16 bg-white">
     <div class="max-w-7xl flex flex-col md:flex-row  items-start mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Text -->
@@ -707,55 +707,109 @@
 
     </div>
   </section>
-<section class="py-16 bg-white ">
+<section class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <!-- Main Grid – 1 col mobile, 2 col md+ -->
-      <div class="grid grid-cols-1 md:grid-cols-2   md:p-12 gap-8 lg:gap-12  rounded-lg">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
 
-        <!-- LEFT – Tab List -->
-        <div class="flex lg:flex-col border  rounded-2xl p-6 space-y-3">
-          <!-- Tab items – data-target points to content ID -->
-          <button data-target="trustpilot"
-                  class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md hover:bg-gray-100 transition">
-            
-            <span class="text-base font-medium text-gray-900">Trustpilot</span>
-          </button>
+        <!-- LEFT: TABS (Mobile = Carousel, Desktop = Vertical List) -->
+        <div>
 
-          <button data-target="bbb"
-                  class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md bg-blue-100 transition">
-            
-            <span class="text-base font-medium text-gray-900">Better Business Bureau</span>
-          </button>
+          <!-- MOBILE: Horizontal Carousel Tabs -->
+          <div class="block lg:hidden">
+            <div id="mobileTabCarousel" class="flex gap-3 overflow-x-auto snap-x snap-mandatory scroll-smooth py-2 px-1 hide-scrollbar
+                        [mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]">
+              
+              <!-- Duplicate for infinite loop -->
+              <div class="flex gap-3 flex-shrink-0">
+                <!-- Trustpilot -->
+                <button data-target="trustpilot" class="tab-btn-mobile w-48 snap-center">
+                  <div class="flex items-center space-x-2 p-3 bg-white rounded-xl shadow hover:shadow-md transition">
+                    <span class="text-sm font-medium text-gray-900">Trustpilot</span>
+                  </div>
+                </button>
 
-          <button data-target="state"
-                  class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md hover:bg-gray-100 transition">
-          
-            <span class="text-base text-gray-700">State‑Licensed Lender</span>
-          </button>
+                <!-- BBB (default active) -->
+                <button data-target="bbb" class="tab-btn-mobile w-48 snap-center">
+                  <div class="flex items-center space-x-2 p-3 bg-blue-100 rounded-xl shadow hover:shadow-md transition">
+                    <span class="text-sm font-medium text-gray-900">Better Business Bureau</span>
+                  </div>
+                </button>
 
-          <button data-target="secure"
-                  class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md hover:bg-gray-100 transition">
-           
-            <span class="text-base text-gray-700">Confidential and Secure</span>
-          </button>
+                <!-- State -->
+                <button data-target="state" class="tab-btn-mobile w-48 snap-center">
+                  <div class="flex items-center space-x-2 p-3 bg-white rounded-xl shadow hover:shadow-md transition">
+                    <span class="text-sm text-gray-700">State-Licensed</span>
+                  </div>
+                </button>
 
-          <button data-target="simple"
-                  class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md hover:bg-gray-100 transition">
-            
-            <span class="text-base text-gray-700">Simple, Secure, Trusted</span>
-          </button>
+                <!-- Secure -->
+                <button data-target="secure" class="tab-btn-mobile w-48 snap-center">
+                  <div class="flex items-center space-x-2 p-3 bg-white rounded-xl shadow hover:shadow-md transition">
+                    <span class="text-sm text-gray-700">Secure</span>
+                  </div>
+                </button>
 
-          <button data-target="google"
-                  class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md hover:bg-gray-100 transition">
-          
-            <span class="text-base text-gray-700">Google My Business</span>
-          </button>
+                <!-- Simple -->
+                <button data-target="simple" class="tab-btn-mobile w-48 snap-center">
+                  <div class="flex items-center space-x-2 p-3 bg-white rounded-xl shadow hover:shadow-md transition">
+                    <span class="text-sm text-gray-700">Simple & Trusted</span>
+                  </div>
+                </button>
+
+                <!-- Google -->
+                <button data-target="google" class="tab-btn-mobile w-48 snap-center">
+                  <div class="flex items-center space-x-2 p-3 bg-white rounded-xl shadow hover:shadow-md transition">
+                    <span class="text-sm text-gray-700">Google</span>
+                  </div>
+                </button>
+              </div>
+
+              <!-- Duplicate again for smooth loop -->
+              <div class="flex gap-3 flex-shrink-0">
+                <button data-target="trustpilot" class="tab-btn-mobile w-48 snap-center">
+                  <div class="flex items-center space-x-2 p-3 bg-white rounded-xl shadow hover:shadow-md transition">
+                    <span class="text-sm font-medium text-gray-900">Trustpilot</span>
+                  </div>
+                </button>
+                <!-- Repeat all again if needed -->
+              </div>
+
+            </div>
+          </div>
+
+          <!-- DESKTOP: Vertical List -->
+          <div class="hidden lg:flex lg:flex-col border rounded-2xl p-6 space-y-3">
+            <button data-target="trustpilot" class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md hover:bg-gray-100 transition">
+              <span class="text-base font-medium text-gray-900">Trustpilot</span>
+            </button>
+
+            <button data-target="bbb" class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md bg-blue-100 transition">
+              <span class="text-base font-medium text-gray-900">Better Business Bureau</span>
+            </button>
+
+            <button data-target="state" class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md hover:bg-gray-100 transition">
+              <span class="text-base text-gray-700">State‑Licensed Lender</span>
+            </button>
+
+            <button data-target="secure" class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md hover:bg-gray-100 transition">
+              <span class="text-base text-gray-700">Confidential and Secure</span>
+            </button>
+
+            <button data-target="simple" class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md hover:bg-gray-100 transition">
+              <span class="text-base text-gray-700">Simple, Secure, Trusted</span>
+            </button>
+
+            <button data-target="google" class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md hover:bg-gray-100 transition">
+              <span class="text-base text-gray-700">Google My Business</span>
+            </button>
+          </div>
+
         </div>
 
-        <!-- RIGHT – Dynamic Content -->
-        <div id="tab-content" class="p-6 bg-white rounded-lg  flex flex-col items-center text-center md:text-left md:items-start">
-          <!-- Content will be injected by JS -->
+        <!-- RIGHT: Dynamic Content -->
+        <div id="tab-content" class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center md:text-left md:items-start">
+          <!-- Content injected by JS -->
         </div>
 
       </div>
