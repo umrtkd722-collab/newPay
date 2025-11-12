@@ -2,101 +2,914 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NetPayAdvance</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NetPayAdvance</title>
+
+  <!-- Tailwind CSS CDN -->
+   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config: Set Inter as default font -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', "Segoe UI", 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="bg-gray-100">
-    <div class="shadow-md">
-        <!-- Top Header with Contact Info -->
-        <div class="bg-[#004699] w-full p-2 sm:p-3 md:p-4">
-            <p class="text-white font-semibold text-xs sm:text-sm md:text-base flex items-center justify-center">
-                <i class="fas fa-phone-alt text-white mr-2"></i> Hablamos Español | <span
-                    class="font-light">888-942-3320</span>
-            </p>
-        </div>
-        <!-- Main Header -->
-        <header class="bg-white text-[#004699]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-                <div class="flex items-center justify-between">
-                    <!-- Logo -->
-                    <div class="flex-shrink-0">
-                        <img src="assists/Logo.png" alt="NetPayAdvance Logo" class="h-6 sm:h-8 md:h-10">
-                    </div>
+<body class="bg-gray-100 font-['Inter']">
 
-                    <!-- Desktop Navigation - hidden on mobile, visible on sm and up -->
-                    <nav class="hidden sm:flex sm:space-x-6 md:space-x-8 lg:space-x-10 font-bold text-sm md:text-base">
-                        <a href="#" class="hover:text-blue-700 transition">Loan</a>
-                        <a href="#" class="hover:text-blue-700 transition">Location</a>
-                        <a href="#" class="hover:text-blue-700 transition">Learn More</a>
-                        <a href="#" class="hover:text-blue-700 transition">Contact</a>
-                    </nav>
-
-                    <!-- Right Section with Buttons -->
-                    <div class="flex items-center space-x-2 sm:space-x-4">
-                        <!-- Link Button -->
-                        <button class="hidden sm:flex items-center hover:opacity-80 transition">
-                            <img src="assists/Link.png" alt="Link" class="h-6 md:h-8">
-                        </button>
-
-                        <!-- Apply Now Button -->
-                        <button
-                            class="bg-[#004699] text-white px-3 sm:px-4 md:px-6 py-2 rounded hover:bg-blue-800 transition text-xs sm:text-sm md:text-base font-semibold whitespace-nowrap">
-                            Apply Now
-                        </button>
-
-                        <!-- Login Icon -->
-                        <button class="flex flex-col items-center hover:opacity-80 transition">
-                            <i class="fas fa-user text-[#004699] text-base md:text-lg"></i>
-                            <span class="hidden sm:inline text-xs md:text-sm font-semibold mt-0.5">Login</span>
-                        </button>
-
-                        <!-- Mobile Menu Button - visible only on mobile -->
-                        <button class="sm:hidden p-1 rounded hover:bg-gray-100 transition">
-                            <i class="fas fa-bars text-[#004699] text-lg"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Mobile Navigation Menu - hidden by default, can be toggled with JS -->
-                <nav id="mobileMenu" class="hidden sm:hidden mt-4 pb-4 border-t border-gray-200">
-                    <a href="#" class="block py-2 text-sm font-bold hover:text-blue-700 transition">Loan</a>
-                    <a href="#" class="block py-2 text-sm font-bold hover:text-blue-700 transition">Location</a>
-                    <a href="#" class="block py-2 text-sm font-bold hover:text-blue-700 transition">Learn More</a>
-                    <a href="#" class="block py-2 text-sm font-bold hover:text-blue-700 transition">Contact</a>
-                </nav>
-            </div>
-        </header>
+  <!-- ==================== HEADER (Your Original) ==================== -->
+  <div class="shadow-md">
+    <!-- Top Header with Contact Info -->
+    <div class="bg-[#004699] w-full p-2 sm:p-3 md:p-4">
+      <p class="text-white font-semibold text-xs sm:text-sm md:text-base flex items-center justify-center">
+        <i class="fas fa-phone-alt text-white mr-2"></i> Hablamos Español | <span class="font-light">888-942-3320</span>
+      </p>
     </div>
 
-    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 max-w-7xl">
-        <section class="bg-blue-50 p-4 sm:p-6 md:p-8 rounded-lg">
-            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center">About Net Pay Advance</h1>
-            <p class="text-lg sm:text-xl text-center text-[#004699] font-semibold mb-3">Fast, friendly online
-                loans—backed by real people who care</p>
-            <p class="text-sm sm:text-base text-center text-gray-600">Since 2007, Net Pay Advance has helped thousands
-                of people handle emergency expenses with quick online loans.</p>
-        </section>
-    </main>
+    <!-- Main Header -->
+    <header class="bg-white text-[#004699]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <img src="assists/Logo.png" alt="NetPayAdvance Logo" class="h-6 sm:h-8 md:h-10">
+          </div>
 
-    <script>
-        // Mobile menu toggle
-        const menuButton = document.querySelector('.sm\\:hidden');
-        const mobileMenu = document.getElementById('mobileMenu');
+          <!-- Desktop Navigation -->
+          <nav class="hidden sm:flex sm:space-x-6 md:space-x-8 lg:space-x-10 font-bold text-sm md:text-base">
+            <a href="#" class="hover:text-blue-700 transition">Loan</a>
+            <a href="#" class="hover:text-blue-700 transition">Location</a>
+            <a href="#" class="hover:text-blue-700 transition">Learn More</a>
+            <a href="#" class="hover:text-blue-700 transition">Contact</a>
+          </nav>
 
-        if (menuButton) {
-            menuButton.addEventListener('click', function () {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-    </script>
+          <!-- Right Buttons -->
+          <div class="flex items-center space-x-2 sm:space-x-4">
+            <!-- Link Button -->
+            <button class="hidden sm:flex items-center hover:opacity-80 transition">
+              <img src="assists/Link.png" alt="Link" class="h-6 md:h-8">
+            </button>
+
+            <!-- Apply Now -->
+            <button
+              class="bg-[#004699] text-white px-3 sm:px-4 md:px-6 py-2 rounded hover:bg-blue-800 transition text-xs sm:text-sm md:text-base font-semibold whitespace-nowrap">
+              Apply Now
+            </button>
+
+            <!-- Login Icon -->
+            <button class="flex flex-col items-center hover:opacity-80 transition">
+              <i class="fas fa-user text-[#004699] text-base md:text-lg"></i>
+              <span class="hidden sm:inline text-xs md:text-sm font-semibold mt-0.5">Login</span>
+            </button>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="sm:hidden p-1 rounded hover:bg-gray-100 transition">
+              <i class="fas fa-bars text-[#004699] text-lg"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav id="mobileMenu" class="hidden sm:hidden mt-4 pb-4 border-t border-gray-200">
+          <a href="#" class="block py-2 text-sm font-bold hover:text-blue-700 transition">Loan</a>
+          <a href="#" class="block py-2 text-sm font-bold hover:text-blue-700 transition">Location</a>
+          <a href="#" class="block py-2 text-sm font-bold hover:text-blue-700 transition">Learn More</a>
+          <a href="#" class="block py-2 text-sm font-bold hover:text-blue-700 transition">Contact</a>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <!-- ==================== BREADCRUMB ==================== -->
+  
+  <!-- ==================== ABOUT SECTION (Exact Match) ==================== -->
+  <nav class=" bg-gradient-to-b from-[#E5F6FF] ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-sm text-gray-600">
+      <a href="#" class="hover:text-[#004699] transition">Net Pay Advance</a>
+      <span class="mx-2 text-gray-400">/</span>
+      <span class="text-[#004699] font-medium">About Net Pay Advance</span>
+    </div>
+  </nav>
+  <section class="py-12 bg-gradient-to-b from-[#E5F6FF] to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Heading & Sub-heading -->
+      <div class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+          About Net Pay Advance
+        </h1>
+        <p class="mt-3 text-lg md:text-xl lg:text-2xl text-[#004699] font-medium">
+          Fast, friendly online loans—backed by real people who care
+        </p>
+        <p class="mt-2 text-sm md:text-base text-gray-600 max-w-3xl mx-auto">
+          Since 2007, Net Pay Advance has helped thousands of people handle
+          <em class="italic">emergency expenses</em> with quick online loans.
+        </p>
+      </div>
+
+      <!-- Logo + Card -->
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-8 lg:gap-12 max-w-5xl mx-auto">
+
+        <!-- NP Logo -->
+        <div class="flex-shrink-0">
+          <img src="assists/Header Image Group.png" alt="NP Logo"
+               class="w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 object-contain drop-shadow-xl">
+        </div>
+
+        <!-- White Rounded Card -->
+        <div class="flex-1 bg-white rounded-3xl shadow-xl p-6 md:p-8 lg:p-10 border border-gray-100">
+          <p class="text-gray-700 leading-relaxed text-base md:text-lg lg:text-xl">
+            Access to money in tough times shouldn’t be complicated, delayed, or judgmental. 
+            Our mission is simple: <strong class="font-semibold">make online lending easier, more respectful, and rooted in real human support.</strong>
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Why Choose Heading -->
+      <div class="mt-16">
+  <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-10">
+    Why people choose Net Pay Advance
+  </h2>
+
+  <!-- Carousel Container -->
+  <div class="relative overflow-hidden">
+    <div id="carousel" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar
+               px-4 py-2
+               [mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]">
+      
+      <!-- Card 1 -->
+      <div class="flex-shrink-0 w-72 sm:w-80 bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-lg transition snap-center">
+        <div class="w-12 h-12 mx-auto mb-3 bg-blue-100 rounded-full flex items-center justify-center">
+          <i class="fas fa-credit-card text-[#004699] text-xl"></i>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm md:text-base">
+          No hard credit check — We focus on your ability to repay
+        </h3>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="flex-shrink-0 w-72 sm:w- transformational bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-lg transition snap-center">
+        <div class="w-12 h-12 mx-auto mb-3 bg-blue-100 rounded-full flex items-center justify-center">
+          <i class="fas fa-bolt text-[#004699] text-xl"></i>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm md:text-base">
+          Apply in minutes — Some customers receive funds the same day*
+        </h3>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="flex-shrink-0 w-72 sm:w-80 bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-lg transition snap-center">
+        <div class="w-12 h-12 mx-auto mb-3 bg-blue-100 rounded-full flex items-center justify-center">
+          <i class="fas fa-shield-alt text-[#004699] text-xl"></i>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm md:text-base">
+          Transparent & licensed — No hidden fees, no games
+        </h3>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="flex-shrink-0 w-72 sm:w-80 bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-lg transition snap-center">
+        <div class="w-12 h-12 mx-auto mb-3 bg-blue-100 rounded-full flex items-center justify-center">
+          <i class="fas fa-headset text-[#004699] text-xl"></i>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm md:text-base">
+          Real support — Live, empathetic customer care whenever you need it
+        </h3>
+      </div>
+
+      <!-- Duplicate cards for infinite loop effect -->
+      <div class="flex-shrink-0 w-72 sm:w-80 bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-lg transition snap-center">
+        <div class="w-12 h-12 mx-auto mb-3 bg-blue-100 rounded-full flex items-center justify-center">
+          <i class="fas fa-credit-card text-[#004699] text-xl"></i>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm md:text-base">
+          No hard credit check — We focus on your ability to repay
+        </h3>
+      </div>
+
+      <div class="flex-shrink-0 w-72 sm:w-80 bg-white rounded-2xl p-6 text-center shadow-md border border-gray-100 hover:shadow-lg transition snap-center">
+        <div class="w-12 h-12 mx-auto mb-3 bg-blue-100 rounded-full flex items-center justify-center">
+          <i class="fas fa-bolt text-[#004699] text-xl"></i>
+        </div>
+        <h3 class="font-semibold text-gray-800 text-sm md:text-base">
+          Apply in minutes — Some customers receive funds the same day*
+        </h3>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      <!-- ==================== OUR STORY ==================== -->
+      <div class="mt-16 bg-white rounded-3xl shadow-lg p-6 md:p-10 lg:p-12 max-w-5xl mx-auto border border-gray-100">
+        <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+          <!-- Text -->
+          <div class="flex-1">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#004699] mb-4">Our story</h2>
+            <p class="text-gray-700 leading-relaxed text-base md:text-lg">
+              Net Pay Advance was born from a simple idea: people deserve financial support without shame or red tape. Our founder saw how many were excluded by traditional banks and wanted to create something better and easily accessible.<br><br>
+              Over the years, our products have evolved—but our purpose hasn’t changed: <strong class="font-semibold text-[#004699]">to help people move forward, not fall behind.</strong>
+            </p>
+          </div>
+
+          <!-- Image -->
+          <div class="flex-shrink-0">
+            <img src="assists/Story Image Group.png" alt="Wallet and Phone"
+                 class="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 object-contain">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== MEET THE TEAM SECTION ==================== -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+        Meet the team
+      </h2>
+      <p class="mt-4 text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
+        We’re a crew of loan experts and finance professionals—all working together from our main office in Wichita, Kansas. 
+        When you call or email us, you’re speaking with a <strong>real person</strong> who’s here to help.
+      </p>
+    </div>
+
+    <!-- Team Members Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-1 gap-10 lg:gap-16 max-w-5xl mx-auto">
+
+      <!-- Brian J. Staver -->
+      <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+        <div class="flex-shrink-0">
+          <img src="assists/team1.png" alt="Brian J. Staver"
+               class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover shadow-lg">
+        </div>
+        <div class="text-center sm:text-left flex-1">
+          <h3 class="text-xl md:text-2xl font-bold text-gray-900">Brian J. Staver,<span class="text-[#004699]" > President </span> </h3>
+          <p class="mt-2 text-sm md:text-base text-gray-700 leading-relaxed">
+            After serving in the military, Brian began his journey as a life-long entrepreneur. Leading companies in retail manufacturing before pivoting to the online lending space in 2007 and expanding into merchant processing in 2018. Brian’s goal is to help others and motivate his employees to do the same through hard work, perseverance, and innovation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Daniel Mackenthun -->
+     <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+
+  <!-- Text First (on mobile: below image, on desktop: left) -->
+  <div class="flex-1 text-center sm:text-left order-2 sm:order-1">
+    <h3 class="text-xl md:text-2xl font-bold text-gray-900">
+      Daniel Mackenthun, <span class="text-[#004699]">COO / CFO</span>
+    </h3>
+    <p class="mt-2 text-sm md:text-base text-gray-700 leading-relaxed">
+      Daniel joined the team in 2023 as a consultant and ultimately transitioned to full-time in 2024. 
+      With over 28 years of experience in financial services, Daniel helps lead the organization 
+      through his expansive knowledge and skillset. Empowering others with his logical approach 
+      to business objectives and helping the company thrive.
+    </p>
+  </div>
+
+  <!-- Image First (on mobile: above text, on desktop: right) -->
+  <div class="flex-shrink-0 order-1 sm:order-2">
+    <img src="assists/team2.png" alt="Daniel Mackenthun"
+         class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover shadow-lg mx-auto sm:mx-0">
+  </div>
+
+</div>
+
+    </div>
+
+    
+    
+</div>
+</section>
+
+<!-- Executive Team Subheading -->
+
+<!-- ==================== EXECUTIVE TEAM SECTION ==================== -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Title -->
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+      Executive team
+    </h2>
+
+    <!-- Team Grid: Centered on Large Screens -->
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-10 place-items-center justify-center">
+
+      <!-- Alex Dominguez -->
+      <div class="flex flex-col items-center text-center">
+        <div class="relative">
+          <img src="assists/0542ad476de32fba63c55ab2166afbf485844bda.png" alt="Alex Dominguez"
+               class="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover">
+        </div>
+        <h3 class="mt-4 text-base md:text-lg font-bold text-gray-900">Alex Dominguez</h3>
+        <p class="text-sm md:text-base text-gray-600">Credit Risk & Analytics</p>
+      </div>
+
+      <!-- Josh Dennis -->
+      <div class="flex flex-col items-center text-center">
+        <div class="relative">
+          <img src="assists/3aabb1e6801b8d69e76e63e0d01928599b858429.png" alt="Josh Dennis"
+               class="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover">
+        </div>
+        <h3 class="mt-4 text-base md:text-lg font-bold text-gray-900">Josh Dennis</h3>
+        <p class="text-sm md:text-base text-gray-600">Finance & Accounting</p>
+      </div>
+
+      <!-- Joyce Batterson -->
+      <div class="flex flex-col items-center text-center">
+        <div class="relative">
+          <img src="assists/8a88ea8093550cc4742d0a752589cc7f78d09778.png" alt="Joyce Batterson"
+               class="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover">
+        </div>
+        <h3 class="mt-4 text-base md:text-lg font-bold text-gray-900">Joyce Batterson</h3>
+        <p class="text-sm md:text-base text-gray-600">Legal & Compliance</p>
+      </div>
+
+      <!-- Ariel Westphal -->
+      <div class="flex flex-col items-center text-center">
+        <div class="relative">
+          <img src="assists/b84786b1de6704272b9f4227e68c7e0af6f9e8dc.png" alt="Ariel Westphal"
+               class="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover">
+        </div>
+        <h3 class="mt-4 text-base md:text-lg font-bold text-gray-900">Ariel Westphal</h3>
+        <p class="text-sm md:text-base text-gray-600">Marketing</p>
+      </div>
+
+      <!-- Jason Daniels -->
+      <div class="flex flex-col items-center text-center">
+        <div class="relative">
+          <img src="assists/c12f310d284cd7cdc0ecdab3e8c667637216b827.png" alt="Jason Daniels"
+               class="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover">
+        </div>
+        <h3 class="mt-4 text-base md:text-lg font-bold text-gray-900">Jason Daniels</h3>
+        <p class="text-sm md:text-base text-gray-600">Technology</p>
+      </div>
+
+      <!-- Jamie Watkins -->
+      <div class="flex flex-col items-center text-center">
+        <div class="relative">
+          <img src="assists/df0d36581aa7a982670ac0e2cb50d3c6f4477cbd.png" alt="Jamie Watkins"
+               class="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover">
+        </div>
+        <h3 class="mt-4 text-base md:text-lg font-bold text-gray-900">Jamie Watkins</h3>
+        <p class="text-sm md:text-base text-gray-600">Strategic Initiatives</p>
+      </div>
+
+      <!-- Tracy Bengtson (Placeholder Icon) -->
+      <div class="flex flex-col items-center text-center">
+        <div class="relative">
+          <div class="w-32 h-32 md:w-36 md:h-36 rounded-full bg-gradient-to-r from-[#004699] to-blue-400 p-1">
+            <div class="w-full h-full rounded-full bg-gray-200 flex items-center justify-center">
+              <i class="fas fa-user text-gray-500 text-3xl md:text-4xl"></i>
+            </div>
+          </div>
+        </div>
+        <h3 class="mt-4 text-base md:text-lg font-bold text-gray-900">Tracy Bengtson</h3>
+        <p class="text-sm md:text-base text-gray-600">Servicing & Collections</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ==================== CLEAR ANSWERS SECTION (Badge Image) ==================== -->
+<section class="py-16 bg-gradient-to-b from-gray-50 to-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+
+      <!-- LEFT – Badge Image -->
+      <div class="relative flex justify-center md:justify-center">
+        
+        <!-- Background decorative circles (kept for design) -->
+       
+
+        <!-- Your Exact Badge Image -->
+        <img src="assists/Group 1000002190.png" 
+             alt="Written & reviewed by FINANCIAL EXPERTS"
+             class="relative z-10 w-64 md:w-72 lg:w-80 h-auto drop-shadow-xl">
+      </div>
+
+      <!-- RIGHT – Text + Button -->
+      <div class="text-center md:text-left">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          Clear answers from real people
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          We believe financial information should be easy to understand. Our content is written and reviewed by real team members—experts in finance, lending, and customer support.
+        </p>
+
+        <!-- Editorial Policy Button -->
+        <a href="#"
+           class=" text-center lg:w-2/4 w-full inline-block bg-[#004699] text-white px-6 py-3 rounded-md font-medium hover:bg-blue-800 transition">
+          Editorial Policy
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ==================== OUR VALUES SECTION ==================== -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Heading -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+          Our values
+        </h2>
+        <p class="mt-2 text-lg text-[#004699] font-medium">
+          We face. We seek. We handle.
+        </p>
+      </div>
+
+      <!-- Grid: 3 columns on ALL screens (mobile, tablet, desktop) -->
+      <div class="grid grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+
+        <!-- 1. Initiative -->
+        <div class="flex flex-col items-center text-center">
+          <div class="w-12 h-12 md:w-14 md:h-14 bg-green-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-lightbulb text-green-600 text-lg md:text-xl"></i>
+          </div>
+          <h3 class="text-sm md:text-lg font-bold text-[#004699] mb-1">Initiative</h3>
+          <p class="text-xs md:text-base text-gray-700 leading-tight">
+            Handling opportunities with confidence and enthusiasm.
+          </p>
+        </div>
+
+        <!-- 2. Persistence -->
+        <div class="flex flex-col items-center text-center">
+          <div class="w-12 h-12 md:w-14 md:h-14 bg-green-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-mountain text-green-600 text-lg md:text-xl"></i>
+          </div>
+          <h3 class="text-sm md:text-lg font-bold text-[#004699] mb-1">Persistence</h3>
+          <p class="text-xs md:text-base text-gray-700 leading-tight">
+            Moving forward in the face of adversity.
+          </p>
+        </div>
+
+        <!-- 3. Integrity -->
+        <div class="flex flex-col items-center text-center">
+          <div class="w-12 h-12 md:w-14 md:h-14 bg-green-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-shield-alt text-green-600 text-lg md:text-xl"></i>
+          </div>
+          <h3 class="text-sm md:text-lg font-bold text-[#004699] mb-1">Integrity</h3>
+          <p class="text-xs md:text-base text-gray-700 leading-tight">
+            Maintaining honesty and strong principles.
+          </p>
+        </div>
+
+        <!-- 4. Innovation -->
+        <div class="flex flex-col items-center text-center">
+          <div class="w-12 h-12 md:w-14 md:h-14 bg-green-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-rocket text-green-600 text-lg md:text-xl"></i>
+          </div>
+          <h3 class="text-sm md:text-lg font-bold text-[#004699] mb-1">Innovation</h3>
+          <p class="text-xs md:text-base text-gray-700 leading-tight">
+            Inspiring progress with results and ingenuity.
+          </p>
+        </div>
+
+        <!-- 5. Teamwork -->
+        <div class="flex flex-col items-center text-center">
+          <div class="w-12 h-12 md:w-14 md:h-14 bg-green-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-users text-green-600 text-lg md:text-xl"></i>
+          </div>
+          <h3 class="text-sm md:text-lg font-bold text-[#004699] mb-1">Teamwork</h3>
+          <p class="text-xs md:text-base text-gray-700 leading-tight">
+            Uniting the combined effort of our organization.
+          </p>
+        </div>
+
+        <!-- 6. Respect -->
+        <div class="flex flex-col items-center text-center">
+          <div class="w-12 h-12 md:w-14 md:h-14 bg-green-100 rounded-full flex items-center justify-center mb-3">
+            <i class="fas fa-handshake text-green-600 text-lg md:text-xl"></i>
+          </div>
+          <h3 class="text-sm md:text-lg font-bold text-[#004699] mb-1">Respect</h3>
+          <p class="text-xs md:text-base text-gray-700 leading-tight">
+            Considering the feelings of others in your actions.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+<section class="py-16 bg-white  ">
+  <div class="max-w-7xl bg-gradient-to-t from-[#DCF3FF] p-12 rounded-2xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+      What our customers say
+    </h2>
+
+    <!-- Reviews Container -->
+    <div class="block md:hidden">
+      <!-- Mobile: Horizontal Carousel -->
+      <div id="mobileCarousel" class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-4 py-2 hide-scrollbar
+                  [mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]">
+        
+        <!-- Review 1 -->
+        <div class="flex-shrink-0 w-80 snap-center">
+          <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col h-full">
+            <div class="flex items-center mb-3">
+              <i class="fab fa-trustpilot text-green-600 text-2xl mr-2"></i>
+              <span class="text-sm font-medium text-gray-600">Trustpilot</span>
+            </div>
+            <p class="text-gray-800 text-base leading-relaxed flex-grow">
+              “Having a payday loan with Net Pay Advance has been the easiest experience I’ve had in paying back a loan.”
+            </p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex text-yellow-500">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <span class="text-sm text-gray-500">Reem</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="flex-shrink-0 w-80 snap-center">
+          <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col h-full">
+            <div class="flex items-center mb-3">
+              <i class="fab fa-trustpilot text-green-600 text-2xl mr-2"></i>
+              <span class="text-sm font-medium text-gray-600">Trustpilot</span>
+            </div>
+            <p class="text-gray-800 text-base leading-relaxed flex-grow">
+              “The customer service at Net Pay Advance is amazing. Thank you so much for being so understanding and hardworking!”
+            </p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex text-yellow-500">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <span class="text-sm text-gray-500">AS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="flex-shrink-0 w-80 snap-center">
+          <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col h-full">
+            <div class="flex items-center mb-3">
+              <i class="fab fa-trustpilot text-green-600 text-2xl mr-2"></i>
+              <span class="text-sm font-medium text-gray-600">Trustpilot</span>
+            </div>
+            <p class="text-gray-800 text-base leading-relaxed flex-grow">
+              “They have always helped me when needed! They also have amazing customer service!”
+            </p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex text-yellow-500">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <span class="text-sm text-gray-500">DC</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Duplicate for infinite loop -->
+        <div class="flex-shrink-0 w-80 snap-center">
+          <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col h-full">
+            <div class="flex items-center mb-3">
+              <i class="fab fa-trustpilot text-green-600 text-2xl mr-2"></i>
+              <span class="text-sm font-medium text-gray-600">Trustpilot</span>
+            </div>
+            <p class="text-gray-800 text-base leading-relaxed flex-grow">
+              “Having a payday loan with Net Pay Advance has been the easiest experience I’ve had in paying back a loan.”
+            </p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex text-yellow-500">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <span class="text-sm text-gray-500">Reem</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Desktop: 3-column grid -->
+    <div class="hidden md:grid md:grid-cols-3 gap-8">
+      <!-- Same 3 reviews (no duplication needed) -->
+      <!-- Review 1 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+        <div class="flex items-center mb-3">
+          <i class="fab fa-trustpilot text-green-600 text-2xl mr-2"></i>
+          <span class="text-sm font-medium text-gray-600">Trustpilot</span>
+        </div>
+        <p class="text-gray-800 text-base leading-relaxed flex-grow">
+          “Having a payday loan with Net Pay Advance has been the easiest experience I’ve had in paying back a loan.”
+        </p>
+        <div class="flex items-center justify-between mt-4">
+          <div class="flex text-yellow-500">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <span class="text-sm text-gray-500">Reem</span>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+        <div class="flex items-center mb-3">
+          <i class="fab fa-trustpilot text-green-600 text-2xl mr-2"></i>
+          <span class="text-sm font-medium text-gray-600">Trustpilot</span>
+        </div>
+        <p class="text-gray-800 text-base leading-relaxed flex-grow">
+          “The customer service at Net Pay Advance is amazing. Thank you so much for being so understanding and hardworking!”
+        </p>
+        <div class="flex items-center justify-between mt-4">
+          <div class="flex text-yellow-500">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <span class="text-sm text-gray-500">AS</span>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+        <div class="flex items-center mb-3">
+          <i class="fab fa-trustpilot text-green-600 text-2xl mr-2"></i>
+          <span class="text-sm font-medium text-gray-600">Trustpilot</span>
+        </div>
+        <p class="text-gray-800 text-base leading-relaxed flex-grow">
+          “They have always helped me when needed! They also have amazing customer service!”
+        </p>
+        <div class="flex items-center justify-between mt-4">
+          <div class="flex text-yellow-500">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <span class="text-sm text-gray-500">DC</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- See More Reviews Button (Responsive) -->
+    <div class="text-center mt-12">
+      <a href="#"
+         class="w-full md:w-auto inline-block bg-[#004699] text-white px-8 py-3 rounded-md font-medium hover:bg-blue-800 transition">
+        See More Reviews
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl flex flex-col md:flex-row  items-start mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Text -->
+      <div class="text-center md:text-start mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Built on trust and transparency
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 max-w-4xl mx-auto">
+          When you explore our site, you’ll notice badges that represent our licensing, security, 
+          and customer satisfaction. Here’s what they mean.
+        </p>
+      </div>
+
+      <!-- Badges Container -->
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-6 md:gap-10">
+
+        <!-- Your Badge Image -->
+        <div class="flex justify-center">
+          <img src="assists/Badges Container.png" 
+               alt="Trust Badges: 8,000+ Reviews, State Licensed, Confidential Secure, Simple & Secure Trusted"
+               class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+<section class="py-16 bg-white ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Main Grid – 1 col mobile, 2 col md+ -->
+      <div class="grid grid-cols-1 md:grid-cols-2   md:p-12 gap-8 lg:gap-12  rounded-lg">
+
+        <!-- LEFT – Tab List -->
+        <div class="flex lg:flex-col border  rounded-2xl p-6 space-y-3">
+          <!-- Tab items – data-target points to content ID -->
+          <button data-target="trustpilot"
+                  class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md hover:bg-gray-100 transition">
+            
+            <span class="text-base font-medium text-gray-900">Trustpilot</span>
+          </button>
+
+          <button data-target="bbb"
+                  class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md bg-blue-100 transition">
+            
+            <span class="text-base font-medium text-gray-900">Better Business Bureau</span>
+          </button>
+
+          <button data-target="state"
+                  class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md hover:bg-gray-100 transition">
+          
+            <span class="text-base text-gray-700">State‑Licensed Lender</span>
+          </button>
+
+          <button data-target="secure"
+                  class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md hover:bg-gray-100 transition">
+           
+            <span class="text-base text-gray-700">Confidential and Secure</span>
+          </button>
+
+          <button data-target="simple"
+                  class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md hover:bg-gray-100 transition">
+            
+            <span class="text-base text-gray-700">Simple, Secure, Trusted</span>
+          </button>
+
+          <button data-target="google"
+                  class="tab-btn flex items-center space-x-3 text-left p-3 rounded-md hover:bg-gray-100 transition">
+          
+            <span class="text-base text-gray-700">Google My Business</span>
+          </button>
+        </div>
+
+        <!-- RIGHT – Dynamic Content -->
+        <div id="tab-content" class="p-6 bg-white rounded-lg  flex flex-col items-center text-center md:text-left md:items-start">
+          <!-- Content will be injected by JS -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <script type="text/x-template" id="trustpilot-content">
+    <h3 class="text-xl font-bold text-gray-900 mb-3">Trustpilot Reviews</h3>
+    <p class="text-sm md:text-base first-letter:text-gray-700 leading-relaxed mb-4">
+      We are proud of our <strong>4.8/5</strong> rating on Trustpilot with over <strong>8,000+</strong> reviews.
+    </p>
+    <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Trustpilot Profile ></a>
+  </script>
+
+  <script type="text/x-template" id="bbb-content">
+    <img src="/assists/bb.png" alt="Better Business Bureau" class="w-10 h-auto mb-4">
+    <h3 class="text-xl font-bold text-gray-900 mb-2">Better Business Bureau</h3>
+    <p class="text-sm md:text-base text-gray-700 leading-relaxed mb-4">
+      We are a direct lender that is licensed to offer loan services in the states of California, Kansas, Louisiana, Missouri, South Carolina, Tennessee, Texas, and Utah. 
+      <a href="#" class="text-blue-600 hover:underline">View our State Licenses</a>.
+    </p>
+    <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View BBB Profile ></a>
+  </script>
+
+  <script type="text/x-template" id="state-content">
+    <i class="fas fa-certificate text-6xl text-green-600 mb-4"></i>
+    <h3 class="text-xl font-bold text-gray-900 mb-2">State‑Licensed Lender</h3>
+    <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+      Fully licensed and regulated in every state we serve. Compliance is our priority.
+    </p>
+  </script>
+
+  <script type="text/x-template" id="secure-content">
+    <i class="fas fa-shield-alt text-6xl text-teal-600 mb-4"></i>
+    <h3 class="text-xl font-bold text-gray-900 mb-2">Confidential and Secure</h3>
+    <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+      256‑bit SSL encryption, PCI‑DSS compliant, and never share your data.
+    </p>
+  </script>
+
+  <script type="text/x-template" id="simple-content">
+    <i class="fas fa-thumbs-up text-6xl text-indigo-600 mb-4"></i>
+    <h3 class="text-xl font-bold text-gray-900 mb-2">Simple, Secure, Trusted</h3>
+    <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+      Fast applications, clear terms, and real people ready to help.
+    </p>
+  </script>
+
+  <script type="text/x-template" id="google-content">
+    <i class="fab fa-google text-6xl text-red-600 mb-4"></i>
+    <h3 class="text-xl font-bold text-gray-900 mb-2">Google My Business</h3>
+    <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+      Verified business with <strong>4.9/5</strong> stars from local customers.
+    </p>
+    <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Google Reviews ></a>
+  </script>
+  <style>
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('.tab-btn');
+      const contentArea = document.getElementById('tab-content');
+
+      // Default: show BBB (highlighted)
+      showTab('bbb');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.getAttribute('data-target');
+          showTab(target);
+        });
+      });
+
+      function showTab(id) {
+        // Update active tab style
+        tabs.forEach(t => {
+          t.classList.remove('bg-blue-100');
+          t.classList.add('hover:bg-gray-100');
+        });
+        const activeTab = document.querySelector(`[data-target="${id}"]`);
+        activeTab.classList.add('bg-blue-100');
+        activeTab.classList.remove('hover:bg-gray-100');
+
+        // Inject content
+        const template = document.getElementById(`${id}-content`).innerHTML;
+        contentArea.innerHTML = template;
+      }
+    });
+    //   <!-- ==================== MOBILE MENU SCRIPT ==================== -->
+const carousel2 = document.getElementById('mobileCarousel');
+  if (carousel2) {
+    let scrollAmount = 0;
+    const cardWidth = 320; // w-80 = 320px
+    const gap = 16; // gap-4 = 1rem
+    const totalWidth = cardWidth + gap;
+
+    function autoScroll() {
+      scrollAmount += totalWidth;
+      if (scrollAmount >= carousel2.scrollWidth / 2) {
+        scrollAmount = 0;
+      }
+      carousel2.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    }
+
+    let interval = setInterval(autoScroll, 4000);
+
+    carousel2.addEventListener('mouseenter', () => clearInterval(interval));
+    carousel2.addEventListener('mouseleave', () => interval = setInterval(autoScroll, 4000));
+    carousel2.addEventListener('touchstart', () => clearInterval(interval));
+    carousel2.addEventListener('touchend', () => interval = setInterval(autoScroll, 4000));
+  }
+    const carousel = document.getElementById('carousel');
+  let scrollAmount = 0;
+  const cardWidth = 320; // w-80 = 20rem = 320px approx
+  const gap = 24; // gap-6 = 1.5rem = 24px
+  const totalWidth = cardWidth + gap;
+
+  function autoScroll() {
+    scrollAmount += totalWidth;
+    if (scrollAmount >= carousel.scrollWidth / 2) {
+      scrollAmount = 0;
+    }
+    carousel.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+
+  
+  let autoScrollInterval = setInterval(autoScroll, 4000);
+
+  
+  carousel.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+  carousel.addEventListener('mouseleave', () => autoScrollInterval = setInterval(autoScroll, 4000));
+
+
+  carousel.addEventListener('touchstart', () => clearInterval(autoScrollInterval));
+  carousel.addEventListener('touchend', () => autoScrollInterval = setInterval(autoScroll, 4000));
+
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
 </body>
 
 </html>
